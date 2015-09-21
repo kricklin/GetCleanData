@@ -4,7 +4,6 @@ author: "ken r."
 date: "Sept. 21, 2015"
 output:
   html_document:
-    fig_width: 4
     keep_md: yes
     theme: spacelab
     toc: yes
@@ -78,6 +77,7 @@ The code in "analysis.R" performs the following steps:
 
 ####Part I - Set Up
 1. Load required R packages:
+
 + data.table
 + dplyr
 + stringr
