@@ -10,7 +10,7 @@ library("dplyr", lib.loc="/Library/Frameworks/R.framework/Versions/3.1/Resources
 
 library("stringr", lib.loc="/Library/Frameworks/R.framework/Versions/3.1/Resources/library")
 
-print("Environment Setup Complete")
+print("Setup Complete")
 
 # -----------------------------------------------------------------------------
 
@@ -27,11 +27,11 @@ print("Environment Setup Complete")
 # -----------------------------------------------------------------------------
 
 # Part II - Process Test Data - 2947 Rows
-#      1) Load the Test Measurements into a DF
-#      2) Load the Test Subject IDs into a separate DF
-#      3) Add the Subject IDs to the Test Measurements in a new column.
-#      4) Load the Test Activities into a separate vector.
-#      5) Add the Activities to the Test Measurements in a new column.
+# 1) Load the Test Measurements into a DF
+# 2) Load the Test Subject IDs into a separate DF
+# 3) Add the Subject IDs to the Test Measurements in a new column.
+# 4) Load the Test Activities into a separate vector.
+# 5) Add the Activities to the Test Measurements in a new column.
 
 print("Begin Loading Test Data...")
 
@@ -78,9 +78,6 @@ all_rows$activity[all_rows$activity == 4] <- "SITTING"
 all_rows$activity[all_rows$activity == 5] <- "STANDING"
 all_rows$activity[all_rows$activity == 6] <- "LAYING"
 
-#all_rows$partition[all_rows$partition == 1] <- "TESTING"
-#all_rows$partition[all_rows$partition == 2] <- "TRAINING"
-
 # Change "activity" from class "character" to class "factor"
 all_rows$activity <- as.factor(all_rows$activity)
 all_rows$partition <- as.factor(all_rows$partition)
@@ -90,12 +87,11 @@ feature_names <-  read.table("./features.txt", sep = "")
 variable_names <- as.vector(feature_names$V2)
 setnames(all_rows, old=c(4:564), new=variable_names)
 
-
 # Create a DF that is a subset of the "all_rows" DF.  Include columns:
 # "subject_id", "activity", and any column containing the string "mean()" or "std()
 
 print("Part 4 - Subset and Sumarize")
-rows_std_mean <- select(all_rows, subject_id, partition, activity, contains("mean", ignore.case = TRUE), contains("std()"))  ## May need to expand as other columns have "mean" as part of the name.
+rows_std_mean <- select(all_rows, subject_id, partition, activity, contains("mean", ignore.case = TRUE), contains("std()"))
 
 # Remove any rows beginning with "angle"
 rows_std_mean <- select(rows_std_mean, -starts_with("angle"))
@@ -105,6 +101,8 @@ sum_df <- rows_std_mean %>% group_by(subject_id, partition, activity)  %>%
         summarise_each(funs(mean))
 
 # print("Analysis Complete")
+
+# Modify variable names to improve meaning and readabilty
 # pass1
 new_names <- sub("^f", "f_", names(sum_df))
 # pass2
@@ -129,13 +127,9 @@ new_names <- gsub("__", "_", new_names)
 new_names <- tolower(new_names)
 # pass12
 new_names <- gsub("\\(\\)", "", new_names)
-#
 
-# make a copy of the sum_df and then compare when column names change.
-# sum_df_orig <- copy(sum_df)
-
-# Use setnames() as more efficient than colnames() to rename the columns
+# Use setnames() as more efficient than colnames()
 setnames(sum_df, c(new_names))
-str(sum_df)
 
-write.table(sum_df, file="analysis_ouput.txt", sep=" ")
+# Create the output file
+write.table(sum_df, file="analysis_output.txt", sep=" ")
