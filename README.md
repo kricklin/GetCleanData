@@ -68,10 +68,7 @@ https://github.com/kricklin/gcd_analysis
 The code in "analysis.R" performs the following steps:
 
 ####Part I - Set Up
-1. Load required R packages
-+ data.table
-+ dplyr
-+ stringr
+1. Load required R packages - **data.table**, **dplyr**, and **stringr**
 2. Download and expand the "Dataset.zip" archive into a "./data" sub-directory
 
 ####Part II - Process Test Data - 2947 Rows
