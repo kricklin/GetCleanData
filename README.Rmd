@@ -78,6 +78,7 @@ The code in "analysis.R" performs the following steps:
 
 ####Part I - Set Up
 1. Load required R packages:
+
 - data.table
 - dplyr
 - stringr
