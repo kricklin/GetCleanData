@@ -69,7 +69,7 @@ img {
 <div id="TOC">
 <ul>
 <li><a href="#background">Background</a></li>
-<li><a href="#project-description">Project Description</a></li>
+<li><a href="#code-description">Code Description</a></li>
 <li><a href="#data-processing">Data Processing</a></li>
 <li><a href="#steps-to-execute-run_analysis.r">Steps to Execute run_analysis.R</a></li>
 <li><a href="#original-huars-data-set-license">Original HUARS Data Set License</a></li>
@@ -78,11 +78,11 @@ img {
 
 <div id="background" class="section level2">
 <h2>Background</h2>
-<p>In December, 2012 four scientists of the University of Genova’s Smartlab Research Laboratory conducted a series of experiments designed to measure human movement via smartphone technology. Utilizing the smartphone’s built-in accelerometer and gyroscope, the scientists were able to measure six activities within a group of 30 volunteers. These experiments culminated in a data set the scientists labeled “Human Activity Recognition Using Smartphones (HARUS) Data Set Version 1.0”.</p>
+<p>In December, 2012 scientists of the University of Genova’s Smartlab Research Laboratory conducted a series of experiments designed to measure human movement via smartphone technology. Utilizing the smartphone’s built-in accelerometer and gyroscope, the scientists were able to measure six activities for each of 30 volunteers. These experiments culminated in a data set the scientists labeled “Human Activity Recognition Using Smartphones (HARUS) Data Set Version 1.0”.</p>
 </div>
-<div id="project-description" class="section level2">
-<h2>Project Description</h2>
-<p>The purpose of this project is to subset the original HARUS data set, creating a new text file containing a much smaller data set of mean and standard deviation measurements of each activity. Each variable in the new data set will be labeled with descriptive activity names. Using this new data set as input, create a second, independent data set containing the average of each variable for each activity, for each subject. This data set will be tidy, and wide.</p>
+<div id="code-description" class="section level2">
+<h2>Code Description</h2>
+<p>When executed, <strong>run_analysis.r</strong> proceeds to subset the original HARUS data set, creating a new, much smaller data set of mean and standard deviation activity measurements for each subject. Each variable in the new data set will be labeled with descriptive activity names. Using this new data set as input, the script creates a second, independent data set containing the average of each variable for each activity, for each subject. The output of this script will be <strong>analysis_output.txt</strong>; a tidy, wide dataset.</p>
 </div>
 <div id="data-processing" class="section level2">
 <h2>Data Processing</h2>
@@ -98,19 +98,19 @@ img {
 <p>The HARUS data set consists of a number of text files. These files contain subject activity measurements (up to 6 for each subject), subject identifiers, features, and activity lables. Subjects were randomly assigned to either a “TESTING” or “TRAINING” group; there are subject data files for each group.</p>
 <p>The “TRAINING” subject data is contained in:</p>
 <ul>
-<li><p><strong>X_train.txt</strong>: Activity measurments for the “TRAINING” subjects.</p></li>
-<li><p><strong>y_train.txt</strong>: “TRAINING” subject identifiers.</p></li>
+<li><strong>X_train.txt</strong>: Activity measurments for the “TRAINING” subjects.</li>
+<li><strong>y_train.txt</strong>: “TRAINING” subject identifiers.</li>
 </ul>
 <p>The “TESTING” subject data is contained in:</p>
 <ul>
-<li><p><strong>X_test.txt</strong>: Activity measurments for the “TESTING” subjects.</p></li>
-<li><p><strong>y_test.txt</strong>: “TESTING” subject ID.</p></li>
+<li><strong>X_test.txt</strong>: Activity measurments for the “TESTING” subjects.</li>
+<li><strong>y_test.txt</strong>: “TESTING” subject ID.</li>
 </ul>
 <p>For the six activities hundreds of “features” were measured:</p>
 <ul>
-<li><p><strong>features.txt</strong>: Lists 561 features.</p></li>
-<li><p><strong>features_info.txt</strong>: Shows information about the variables used on the feature vector.</p></li>
-<li><p><strong>activity_labels.txt</strong>: List of the activities measured for each subject.</p></li>
+<li><strong>features.txt</strong>: Lists 561 features.</li>
+<li><strong>features_info.txt</strong>: Shows information about the variables used on the feature vector.</li>
+<li><strong>activity_labels.txt</strong>: List of the activities measured for each subject.</li>
 </ul>
 <p><em>Note: The HUARS data set includes “Inertial” files for both the “TESTING” and “TRAINING” groups. These files are NOT utilized for this project.</em></p>
 </div>
@@ -118,11 +118,11 @@ img {
 <h3>Record Content</h3>
 <p>When the original files are appropriately combined, a single file of 10,299 results. Each record therin contains:</p>
 <ul>
-<li><p>Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration</p></li>
-<li><p>Triaxial Angular velocity from the gyroscope</p></li>
-<li><p>A 561-feature vector with time and frequency domain variables</p></li>
-<li><p>It’s activity label</p></li>
-<li><p>An identifier of the subject who carried out the experiment</p></li>
+<li>Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration</li>
+<li>Triaxial Angular velocity from the gyroscope</li>
+<li>A 561-feature vector with time and frequency domain variables</li>
+<li>It’s activity label</li>
+<li>An identifier of the subject who carried out the experiment</li>
 </ul>
 </div>
 </div>
@@ -133,7 +133,7 @@ img {
 <p><em>Note: “R” and/or “RStudio” must be installed on the target workstation.</em></p>
 <p>To create a tidy data file from the original HARUS data set:</p>
 <ol style="list-style-type: decimal">
-<li>Clone the “gcd_analysis” Github repo to a new folder on your workstation. The repo is located at <a href="https://github.com/kricklin/gcd_analysis" class="uri">https://github.com/kricklin/gcd_analysis</a></li>
+<li>Clone the “GCD_analysis” Github repo to a new folder on your workstation. The repo is located at: <a href="https://github.com/kricklin/gcd_analysis" class="uri">https://github.com/kricklin/gcd_analysis</a></li>
 <li>Launch the “RStudio” application, or “R” from the command line</li>
 <li>Set the “working directory” to the new folder that contains the repo</li>
 <li>Run the “run_analysis.R” file.</li>
@@ -187,7 +187,7 @@ img {
 </ol>
 <p><em>Notes: Only feature names containing “std()” or “mean” are included in the subset. However, seven features with names beginning with “angle” and containing “mean” are excluded. The result is 82 features/values per observation.</em></p>
 <ol start="2" style="list-style-type: decimal">
-<li>To improve variable name meaning and reability, modified variable names as follows:</li>
+<li>To improve meaning and reability, modified variable names as follows:</li>
 </ol>
 <table>
 <thead>

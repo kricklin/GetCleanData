@@ -3,10 +3,10 @@ ken r.
 Sept. 21, 2015  
 
 ##Background
-In December, 2012 four scientists of the University of Genova's Smartlab Research Laboratory conducted a series of experiments designed to measure human movement via smartphone technology. Utilizing the smartphone's built-in accelerometer and gyroscope, the scientists were able to measure six activities within a group of 30 volunteers. These experiments culminated in a data set the scientists labeled "Human Activity Recognition Using Smartphones (HARUS) Data Set Version 1.0".
+In December, 2012 scientists of the University of Genova's Smartlab Research Laboratory conducted a series of experiments designed to measure human movement via smartphone technology. Utilizing the smartphone's built-in accelerometer and gyroscope, the scientists were able to measure six activities for each of 30 volunteers. These experiments culminated in a data set the scientists labeled "Human Activity Recognition Using Smartphones (HARUS) Data Set Version 1.0".
 
-##Project Description
-The purpose of this project is to subset the original HARUS data set, creating a new text file containing a much smaller data set of mean and standard deviation measurements of each activity. Each variable in the new data set will be labeled with descriptive activity names. Using this new data set as input, create a second, independent data set containing the average of each variable for each activity, for each subject. This data set will be tidy, and wide.
+##Code Description
+When executed, **run_analysis.r** proceeds to subset the original HARUS data set, creating a new, much smaller data set of mean and  standard deviation activity measurements for each subject. Each variable in the new data set will be labeled with descriptive activity names. Using this new data set as input, the script creates a second, independent data set containing the average of each variable for each activity, for each subject. The output of this script will be **analysis_output.txt**; a tidy, wide dataset.
 
 ##Data Processing
 
@@ -25,21 +25,17 @@ The HARUS data set consists of a number of text files. These files contain subje
 The "TRAINING" subject data is contained in:
 
 - **X_train.txt**: Activity measurments for the "TRAINING" subjects.
-
 - **y_train.txt**: "TRAINING" subject identifiers.
 
 The "TESTING" subject data is contained in:
 
 - **X_test.txt**: Activity measurments for the "TESTING" subjects.
-
 - **y_test.txt**: "TESTING" subject ID.
 
 For the six activities hundreds of "features" were measured:
 
 - **features.txt**: Lists 561 features.
-
 - **features_info.txt**: Shows information about the variables used on the feature vector.
-
 - **activity_labels.txt**: List of the activities measured for each subject.
 
 *Note: The HUARS data set includes "Inertial" files for both the "TESTING" and "TRAINING" groups. These files are NOT utilized for this project.*
@@ -48,13 +44,9 @@ For the six activities hundreds of "features" were measured:
 When the original files are appropriately combined, a single file of 10,299 results. Each record therin contains:
 
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration
-
 - Triaxial Angular velocity from the gyroscope 
-
 - A 561-feature vector with time and frequency domain variables 
-
 - It's activity label 
-
 - An identifier of the subject who carried out the experiment
 
 
@@ -66,7 +58,7 @@ When the original files are appropriately combined, a single file of 10,299 resu
 
 To create a tidy data file from the original HARUS data set:
 
-1. Clone the "gcd_analysis" Github repo to a new folder on your workstation. The repo is located at
+1. Clone the "GCD_analysis" Github repo to a new folder on your workstation. The repo is located at:
 https://github.com/kricklin/gcd_analysis
 2. Launch the "RStudio" application, or "R" from the command line
 3. Set the "working directory" to the new folder that contains the repo
@@ -106,7 +98,7 @@ The merged data results in a data frame of 10,299 Rows x 563 Columns
 
 *Notes: Only feature names containing "std()" or "mean" are included in the subset. However, seven features with names  beginning with "angle" and containing "mean" are excluded. The result is 82 features/values per observation.*
  
-2) To improve variable name meaning and reability, modified variable names as follows:
+2) To improve meaning and reability, modified variable names as follows:
 
  Original        | New
  ----------------|-----------------
@@ -120,7 +112,6 @@ The merged data results in a data frame of 10,299 Rows x 563 Columns
  "Gyro"          | "gyro_"
  "JerkMag"       | "jerk_mag"
  UPPER CASE      | lower case
-
 
 3) Create a new, independent tidy data set with the average of each variable for each activity and each subject
 
