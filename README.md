@@ -68,33 +68,33 @@ https://github.com/kricklin/gcd_analysis
 The code in "analysis.R" performs the following steps:
 
 ####Part I - Set Up
-1. Load required R packages:
-2. Download and expand the "Dataset.zip"" archive into a "./data" sub-directory
+1. Load required R packages
+2. Download and expand the "Dataset.zip" archive into a "./data" sub-directory
 
 ####Part II - Process Test Data - 2947 Rows
-1) Load the Test Measurements into a data frame
-2) Load the Test Subject IDs into a separate data frame
-3) Add the Subject IDs to the Test Measurements in a new column
-4) Load the Test Activities into a separate vector
-5) Add the Activities to the Test Measurements in a new column
+1. Load the Test Measurements into a data frame
+2. Load the Test Subject IDs into a separate data frame
+3. Add the Subject IDs to the Test Measurements in a new column
+4. Load the Test Activities into a separate vector
+5. Add the Activities to the Test Measurements in a new column
 
 ####Part III - Process Training Data - 7352 Rows
 "Process Test Data" steps 1-5 are repeated for Training Data 
 
 ####Part IV - Merge Subject Data
-1) Merge the mutated Test and Training Data Frames
-2) Move "subject_id" and "activity" columns to first two columns
-3) Using the "features.txt" file assign Column Names
-4) Using the "activity_labels.txt" file to change the activity column values from numeric values (1-6) to text factors
+1. Merge the mutated Test and Training Data Frames
+2. Move "subject_id" and "activity" columns to first two columns
+3. Using the "features.txt" file assign Column Names
+4. Using the "activity_labels.txt" file to change the activity column values from numeric values (1-6) to text factors
 
 The merged data results in a data frame of 10,299 Rows x 563 Columns
 
 ####Part V - Subset and Summarize
-1) Subset all variables with labels containing "std()" or "mean"
+1. Subset all variables with labels containing "std()" or "mean"
 
 *Notes: Only feature names containing "std()" or "mean" are included in the subset. However, seven features with names  beginning with "angle" and containing "mean" are excluded. The result is 82 features/values per observation.*
  
-2) To improve meaning and reability, modified variable names as follows:
+2. To improve meaning and reability, modified variable names as follows:
 
  Original        | New
  ----------------|-----------------
@@ -109,7 +109,7 @@ The merged data results in a data frame of 10,299 Rows x 563 Columns
  "JerkMag"       | "jerk_mag"
  UPPER CASE      | lower case
 
-3) Create a new, independent tidy data set with the average of each variable for each activity and each subject
+3. Create a new, independent tidy data set with the average of each variable for each activity and each subject
 
 ###Resulting Data Set Notes
 
