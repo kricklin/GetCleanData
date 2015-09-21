@@ -77,6 +77,9 @@ The code in "analysis.R" performs the following steps:
 
 ####Part I - Set Up
 1. Load required R packages
+- data.table
+- dplyr
+- stringr
 2. Download and expand the "Dataset.zip" archive into a "./data" sub-directory
 
 ####Part II - Process Test Data - 2947 Rows
@@ -95,7 +98,7 @@ The code in "analysis.R" performs the following steps:
 3. Using the "features.txt" file assign Column Names
 4. Using the "activity_labels.txt" file to change the activity column values from numeric values (1-6) to text factors
 
-The merged data results in a data frame of 10,299 Rows x 563 Columns
+The merged data results in a data frame of 10,299 Rows x 563 Columns.
 
 ####Part V - Subset and Summarize
 1. Subset all variables with labels containing "std()" or "mean"
