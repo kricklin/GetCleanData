@@ -14,7 +14,11 @@ output:
 In December, 2012 scientists of the University of Genova's Smartlab Research Laboratory conducted a series of experiments designed to measure human movement via smartphone technology. Utilizing the smartphone's built-in accelerometer and gyroscope, the scientists were able to measure six activities for each of 30 volunteers. These experiments culminated in a data set the scientists labeled "Human Activity Recognition Using Smartphones (HARUS) Data Set Version 1.0".
 
 ##Code Description
-When executed, **run_analysis.r** proceeds to subset the original HARUS data set, creating a new, much smaller data set of mean and  standard deviation activity measurements for each subject. Each variable in the new data set will be labeled with descriptive activity names. Using this new data set as input, the script creates a second, independent data set containing the average of each variable for each activity, for each subject. The output of this script will be **analysis_output.txt**; a tidy, wide dataset.
+When executed, **run_analysis.r** proceeds to subset the original HARUS data set, creating a new, much smaller data set of mean and  standard deviation activity measurements for each subject. Each variable in the new data set will be labeled with descriptive activity names. Using this new data set as input, the script creates a second, independent data set containing the average of each variable for each activity, for each subject. The output of this script will be **analysis_output.txt**; a tidy, wide dataset:
+
+180 rows x 84 variables.
+There are 30 subjects. Each subject is tied to 6 rows of activity measurements - one per activity.
+For each row, each measurement contains an average of mean or standard deviation values, of which there are 82.
 
 ##Data Processing
 
@@ -49,13 +53,13 @@ For the six activities hundreds of "features" were measured:
 *Note: The HUARS data set includes "Inertial" files for both the "TESTING" and "TRAINING" groups. These files are NOT utilized for this project.*
 
 ###Record Content
-When the original files are appropriately combined, a single file of 10,299 results. Each record therin contains:
+When the original files are appropriately combined, a single file of 10,299 results. According to the original HUARS README, each record therein contains:
 
-- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration
-- Triaxial Angular velocity from the gyroscope 
-- A 561-feature vector with time and frequency domain variables 
-- It's activity label 
-- An identifier of the subject who carried out the experiment
+>- Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration
+>- Triaxial Angular velocity from the gyroscope 
+>- A 561-feature vector with time and frequency domain variables 
+>- It's activity label 
+>- An identifier of the subject who carried out the experiment
 
 
 ##Steps to Execute run_analysis.R

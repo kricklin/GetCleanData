@@ -88,7 +88,7 @@ variable_names <- as.vector(feature_names$V2)
 setnames(all_rows, old=c(4:564), new=variable_names)
 
 # Create a DF that is a subset of the "all_rows" DF.  Include columns:
-# "subject_id", "activity", and any column containing the string "mean()" or "std()
+# "subject_id", "activity", and any column containing the strings "mean" or "std()
 
 print("Part 4 - Subset and Sumarize")
 rows_std_mean <- select(all_rows, subject_id, partition, activity, contains("mean", ignore.case = TRUE), contains("std()"))
@@ -101,6 +101,7 @@ sum_df <- rows_std_mean %>% group_by(subject_id, partition, activity)  %>%
         summarise_each(funs(mean))
 
 # print("Analysis Complete")
+
 
 # Modify variable names to improve meaning and readabilty
 # pass1
@@ -132,4 +133,4 @@ new_names <- gsub("\\(\\)", "", new_names)
 setnames(sum_df, c(new_names))
 
 # Create the output file
-write.table(sum_df, file="analysis_output.txt", sep=" ")
+write.table(sum_df, file="../../data/analysis_output.txt", sep=" ")

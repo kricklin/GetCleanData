@@ -1,14 +1,6 @@
----
-title: "run_analysis.R Codebook"
-author: "k. ricklin"
-date: "Sept. 21, 2015"
-output:
-  html_document:
-    keep_md: yes
-    toc: true
-    toc_depth: 2
-    theme: spacelab
----
+# run_analysis.R Codebook
+k. ricklin  
+Sept. 21, 2015  
 
 ##Background
 This codebook provides overview for the file **analysis_output.txt** that is created by the **run_analysis.r** script included in the "GetCleanData" repository.
