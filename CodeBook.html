@@ -109,19 +109,19 @@ img {
 <tr class="odd">
 <td align="left">1.</td>
 <td align="left">subject_id</td>
-<td align="left">subject_id<sup>1</sup></td>
+<td align="left">subject_id <sup>1</sup></td>
 <td align="left">integer</td>
 </tr>
 <tr class="even">
 <td align="left">2.</td>
 <td align="left">partition</td>
-<td align="left">partition<sup>2</sup></td>
+<td align="left">partition <sup>2</sup></td>
 <td align="left">factor</td>
 </tr>
 <tr class="odd">
 <td align="left">3.</td>
 <td align="left">activity</td>
-<td align="left">activity<sup>3</sup></td>
+<td align="left">activity <sup>3</sup></td>
 <td align="left">factor</td>
 </tr>
 <tr class="even">
@@ -603,13 +603,36 @@ img {
 </div>
 <div id="new-variable-name-guide" class="section level4">
 <h4>New Variable Name Guide:</h4>
-<ul>
-<li>“f_” = frequency</li>
-<li>“t_” = time</li>
-<li>“_gyro&quot; = gyroscope</li>
-<li>“_accel&quot; = accelerometer</li>
-<li>“_std&quot; = standard deviation</li>
-</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">String</th>
+<th align="left">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">f_</td>
+<td align="left">frequency</td>
+</tr>
+<tr class="even">
+<td align="left">t_</td>
+<td align="left">time</td>
+</tr>
+<tr class="odd">
+<td align="left">_gyro</td>
+<td align="left">gyroscope</td>
+</tr>
+<tr class="even">
+<td align="left">_accel</td>
+<td align="left">accelerometer</td>
+</tr>
+<tr class="odd">
+<td align="left">_std</td>
+<td align="left">standard deviation</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div id="variable-notes" class="section level3">
@@ -620,23 +643,63 @@ img {
 </div>
 <div id="partition" class="section level4">
 <h4>2. partition</h4>
-<p>Factor - an identifier tyingthe subject to a group/partition:</p>
-<ul>
-<li>TRAINING</li>
-<li>TESTING</li>
-</ul>
+<p>Factor of 2 Levels - an identifier tying the subject to a group/partition:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Value</th>
+<th align="left">Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">TRAINING</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">TESTING</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="activity" class="section level4">
 <h4>3. activity</h4>
-<p>Factor - identifies one of six activity measurments:</p>
-<ul>
-<li>WALKING</li>
-<li>WALKING_UPSTAIRS</li>
-<li>WALKING_DOWNSTAIRS</li>
-<li>SITTING</li>
-<li>STANDING</li>
-<li>LAYING</li>
-</ul>
+<p>Factor of 6 Levles - identifies one of six activity measurments:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Value</th>
+<th align="left">Label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">WALKING</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">WALKING_UPSTAIRS</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">WALKING_DOWNSTAIRS</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="left">SITTING</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="left">STANDING</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="left">LAYING</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>

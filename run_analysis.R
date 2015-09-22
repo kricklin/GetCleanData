@@ -111,23 +111,26 @@ new_names <- sub("^t", "t_", new_names)
 # pass3
 new_names <- gsub("-", "_", new_names)
 # pass4
-new_names <- gsub("BodyBody", "Body", new_names)
+new_names <- gsub("meanFreq", "mean_freq", new_names)
 # pass5
-new_names <- gsub("Body", "Body_", new_names)
+new_names <- gsub("BodyBody", "Body", new_names)
 # pass6
-new_names <- gsub("Gravity", "Gravity_", new_names)
+new_names <- gsub("Body", "Body_", new_names)
 # pass7
-new_names <- gsub("Acc", "Accel_", new_names)
+new_names <- gsub("Gravity", "Gravity_", new_names)
 # pass8
-new_names <- gsub("Gyro", "Gyro_", new_names)
+new_names <- gsub("Acc", "Accel_", new_names)
 # pass9
-new_names <- gsub("JerkMag", "Jerk_Mag", new_names)
+new_names <- gsub("Gyro", "Gyro_", new_names)
 # pass10
-new_names <- gsub("__", "_", new_names)
+new_names <- gsub("JerkMag", "Jerk_Mag", new_names)
 # pass11
-new_names <- tolower(new_names)
+new_names <- gsub("__", "_", new_names)
 # pass12
+new_names <- tolower(new_names)
+# pass13
 new_names <- gsub("\\(\\)", "", new_names)
+
 
 # Use setnames() as more efficient than colnames()
 setnames(sum_df, c(new_names))

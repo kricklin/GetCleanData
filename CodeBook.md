@@ -33,9 +33,9 @@ For an overview of the original HUARS data set and the script  used to create th
 
 | Number|Old Name |New Name |Class |
 |-------|---------|---------|------|
-|  1.   | subject_id | subject_id^1^ | integer
-|  2.   | partition | partition^2^ | factor
-|  3.   | activity  | activity^3^ | factor
+|  1.   | subject_id | subject_id ^1^ | integer
+|  2.   | partition | partition ^2^ | factor
+|  3.   | activity  | activity ^3^ | factor
 |  4.   | tBodyAcc-mean()-X | t_body_accel_mean_x | double    
 |  5. |  tBodyAcc-mean()-Y | t_body_accel_mean_y | double            
 |  6. |  tBodyAcc-mean()-Z  | t_body_accel_mean_z | double
@@ -118,31 +118,44 @@ For an overview of the original HUARS data set and the script  used to create th
 
 
 ####New Variable Name Guide:
-+ "f_" = frequency
-+ "t_" = time
-+ "_gyro" = gyroscope
-+ "_accel" = accelerometer
-+ "_std" = standard deviation
+
+
+| String |Meaning |
+|--------|--------|
+ f\_ | frequency 
+ t\_ | time 
+ \_gyro | gyroscope
+ \_accel | accelerometer
+ \_std | standard deviation
+
 
 ###Variable Notes
 ####1. subject_id
 Integer - a value ranging from 1 - 30 that identifies each participant.
 
 ####2. partition
-Factor - an identifier tyingthe subject to a group/partition:
+Factor of 2 Levels - an identifier tying the subject to a group/partition:
 
-- TRAINING
-- TESTING
+
+| Value |Label |
+|-------|------|
+1 | TRAINING
+2 | TESTING
+
 
 ####3. activity
-Factor - identifies one of six activity measurments:
+Factor of 6 Levles - identifies one of six activity measurments:
 
-- WALKING
-- WALKING_UPSTAIRS
-- WALKING_DOWNSTAIRS
-- SITTING
-- STANDING
-- LAYING
+
+| Value |Label |
+|-------|------|
+1 | WALKING
+2 | WALKING_UPSTAIRS
+3 | WALKING_DOWNSTAIRS
+4 | SITTING
+5 | STANDING
+6 | LAYING
+
 
 ##Original HUARS Data Set License
 Use of this dataset in publications must be acknowledged by referencing the following publication [1] 
