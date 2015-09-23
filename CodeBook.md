@@ -33,8 +33,8 @@ For an overview of the original HUARS data set and the script  used to create th
 | Number|Old Name |New Name |Class |
 |-------|---------|---------|------|
 |  1.   | subject_id | subject_id <sup>1</sup> | integer
-|  2.   | partition | partition ^2^ | factor
-|  3.   | activity  | activity ^3^ | factor
+|  2.   | partition | partition <sup>2</sup> | factor
+|  3.   | activity  | activity <sup>3</sup> | factor
 |  4.   | tBodyAcc-mean()-X | t_body_accel_mean_x | double    
 |  5. |  tBodyAcc-mean()-Y | t_body_accel_mean_y | double            
 |  6. |  tBodyAcc-mean()-Z  | t_body_accel_mean_z | double
