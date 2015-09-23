@@ -32,7 +32,7 @@ For an overview of the original HUARS data set and the script  used to create th
 
 | Number|Old Name |New Name |Class |
 |-------|---------|---------|------|
-|  1.   | subject_id | subject_id ^1^ | integer
+|  1.   | subject_id | subject_id <sup>1</sup> | integer
 |  2.   | partition | partition ^2^ | factor
 |  3.   | activity  | activity ^3^ | factor
 |  4.   | tBodyAcc-mean()-X | t_body_accel_mean_x | double    
