@@ -100,9 +100,6 @@ rows_std_mean <- select(rows_std_mean, -starts_with("angle"))
 sum_df <- rows_std_mean %>% group_by(subject_id, partition, activity)  %>%
         summarise_each(funs(mean))
 
-# print("Analysis Complete")
-
-
 # Modify variable names to improve meaning and readabilty
 # pass1
 new_names <- sub("^f", "f_", names(sum_df))
@@ -136,4 +133,6 @@ new_names <- gsub("\\(\\)", "", new_names)
 setnames(sum_df, c(new_names))
 
 # Create the output file
-write.table(sum_df, file="../../data/analysis_output.txt", sep=" ")
+write.table(sum_df, file="../../data/analysis_output.txt", sep=" ", row.names=FALSE, quote=FALSE)
+
+print("Analysis Complete")
