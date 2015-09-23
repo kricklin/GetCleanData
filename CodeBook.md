@@ -15,13 +15,13 @@ For an overview of the original HUARS data set and the script  used to create th
 
 ####Data Summary
 
-180 Rows/Observations:
+#####180 Rows/Observations:
 
    + 30 Test Subjects   
    + 6 Activities per Subject
 - Each row represents a collection of all *mean* and *standard deviation* measurements assocated with a specific activity for a single volunteer as captured by smartphone technology. 
 
-82 Columns/Variables:                         
+#####82 Columns/Variables:                         
 
    + 3 Observation Identifiers/Keys   
    + 79 Averaged Features/Measures    

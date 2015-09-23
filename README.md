@@ -100,6 +100,7 @@ The merged data results in a data frame of 10,299 Rows x 563 Columns.
  
 2. To improve meaning and reability, modified variable names as follows:
 
+
  Original        | New
  ----------------|-----------------
  begins with "f" | begins with "f_"
@@ -112,6 +113,7 @@ The merged data results in a data frame of 10,299 Rows x 563 Columns.
  "Gyro"          | "gyro_"
  "JerkMag"       | "jerk_mag"
  UPPER CASE      | lower case
+
 
 3. Create a new, independent tidy data set with the average of each variable for each activity and each subject
 
