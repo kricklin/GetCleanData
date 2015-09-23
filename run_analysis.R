@@ -2,7 +2,9 @@
 # Author: k. ricklin
 
 # Part I - Set working directory, download and unzip project file, load required R Packages.
-setwd("~/Documents/Online Courses/Getting and Cleaning Data/Project/data/UCI HAR Dataset")
+#setwd("~/Documents/Online Courses/Getting and Cleaning Data/Project/data/UCI HAR Dataset")
+
+setwd("~/Documents/Online Courses/Getting and Cleaning Data/Project/GetCleanData")
 
 library("data.table", lib.loc="/Library/Frameworks/R.framework/Versions/3.1/Resources/library")
 
@@ -35,13 +37,13 @@ print("Setup Complete")
 
 print("Begin Loading Test Data...")
 
-test_measures <- read.table("./test/X_test.txt", sep = "")
+test_measures <- read.table("UCI HAR Dataset/test/X_test.txt", sep = "")
 
-test_subjects <-  read.table("./test/subject_test.txt", sep = "")
+test_subjects <-  read.table("UCI HAR Dataset/test/subject_test.txt", sep = "")
 
 test_m_s <- mutate(test_measures, subject_id = as.vector(test_subjects$V1))
 
-test_activities <- read.table("./test/y_test.txt", sep = "")
+test_activities <- read.table("UCI HAR Dataset/test/y_test.txt", sep = "")
 
 test_m_s_a <- mutate(test_m_s, activity = as.vector(test_activities$V1), partition = "TESTING" )
 
@@ -51,13 +53,13 @@ print("Finished Loading Test Data")
 
 print("Begin Loading Training Data...")
 
-train_measures <- read.table("./train/X_train.txt", sep = "")
+train_measures <- read.table("UCI HAR Dataset/train/X_train.txt", sep = "")
 
-train_subjects <- read.table("./train/subject_train.txt", sep = "")
+train_subjects <- read.table("UCI HAR Dataset/train/subject_train.txt", sep = "")
 
 train_m_s <- mutate(train_measures, subject_id = as.vector(train_subjects$V1))
 
-train_activities <- read.table("./train/y_train.txt", sep = "")
+train_activities <- read.table("UCI HAR Dataset/train/y_train.txt", sep = "")
 
 train_m_s_a <- mutate(train_m_s, activity = as.vector(train_activities$V1), partition = "TRAINING" )
 
@@ -83,7 +85,7 @@ all_rows$activity <- as.factor(all_rows$activity)
 all_rows$partition <- as.factor(all_rows$partition)
 
 # Assign Column Names
-feature_names <-  read.table("./features.txt", sep = "")
+feature_names <-  read.table("UCI HAR Dataset/features.txt", sep = "")
 variable_names <- as.vector(feature_names$V2)
 setnames(all_rows, old=c(4:564), new=variable_names)
 
@@ -99,6 +101,9 @@ rows_std_mean <- select(rows_std_mean, -starts_with("angle"))
 # Create a new DF that shows the average of each measurement
 sum_df <- rows_std_mean %>% group_by(subject_id, partition, activity)  %>%
         summarise_each(funs(mean))
+
+# Order the data by Volunteer ID and Activity
+sum_ordered <- setorder(sum_df, subject_id, activity)
 
 # Modify variable names to improve meaning and readabilty
 # pass1
@@ -128,11 +133,11 @@ new_names <- tolower(new_names)
 # pass13
 new_names <- gsub("\\(\\)", "", new_names)
 
-
 # Use setnames() as more efficient than colnames()
 setnames(sum_df, c(new_names))
 
 # Create the output file
-write.table(sum_df, file="../../data/analysis_output.txt", sep=" ", row.names=FALSE, quote=FALSE)
+#write.table(sum_df, file="../../data/analysis_output.txt", sep=" ", row.names=FALSE, quote=FALSE)
+write.table(sum_df, file="huars_tidy_subset.txt", sep=" ", row.names=FALSE, quote=FALSE)
 
 print("Analysis Complete")
