@@ -23,9 +23,9 @@ For an overview of the original HUARS data set and the script  used to create th
 
 82 Columns/Variables:                         
 
-   + 3 Observartion Identifiers   
+   + 3 Observation Identifiers/Keys   
    + 79 Averaged Features/Measures    
-- With the exception of the Identifier (**subject_id**, **partition**, **activity**) columns, each column represents the average value for a specific measurement of *mean* or *standard deviation*.
+- With the exception of the Identifier columns (**subject_id**, **partition**, **activity**), each column represents the average value for a specific measurement of *mean* or *standard deviation*.
  
 ####Variable Names:
 
